@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Saira+Stencil+One&display=swap" rel="stylesheet">
+
+    <title>Hello, world!</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            background: #00040E;
+            font-family: 'Saira Stencil One', cursive;
+
+        }
+        .login{
+            z-index: 9;
+            position: fixed;
+            left: 50%;
+            bottom: 10px;
+            transform: translate(-50%);
+            background: #08256d;
+            color: #6c757d;
+            border: 0px;
+            box-shadow: 0 5px 10px black;
+        }
+        .main{
+            min-height: 100vh;
+        }
+        .brainimg{
+            height: 90vh;
+            position: absolute;
+            right: 10%;
+            bottom: 0vh;
+            animation: blinker 3s linear infinite;
+        }
+        
+        .header{
+            font-family: 'Saira Stencil One', cursive;
+            position: absolute;
+            top: 45%;
+            transform:  translateY(-50%) ;
+           
+        }
+        .header h1{
+            font-size: 10vw;
+            color: #08256d;
+            font-family: 'Saira Stencil One', cursive;
+            text-shadow: 0 5px 10px black;
+        }
+        .header h5{
+            font-size: 2vw;
+            color: #001957;
+            font-family: 'Saira Stencil One', cursive;
+            text-shadow: 0 2px 5px black;
+            text-indent: 4vw;
+            text-align: justify;
+        }
+        .headerbtn{
+            background: transparent;
+            color: #08256d;
+            border: 2px solid #08256d;
+            border-radius: 30px;
+        }
+        .headerbtn:hover{
+            background: #08256d;
+            color: #6c757d;
+            transition: .5s ease-in-out;
+        }
+        @keyframes blinker {
+        50% {
+          opacity: .4;
+        }
+        100%{
+            opacity: 1;
+        }
+      }
+
+    .main2{
+            height: 100vh;
+        }
+    .survimg{
+            width: 100%;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            animation: blinker 3s linear infinite;
+        }
+        .main2 h1{
+            font-size: 6vw;
+        }
+
+        .main3{
+            min-height: 100vh;
+        }
+        .main3 img{
+            width: 100%;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .main3 h1{
+            font-size: 6vw;
+            color: #08256d;
+            font-family: 'Saira Stencil One', cursive;
+            text-shadow: 0 5px 10px black;
+        }
+        .main3 h5{
+            font-size: 1.5vw;
+            color: #001957;
+            font-family: 'Saira Stencil One', cursive;
+            text-shadow: 0 2px 5px black;
+            text-indent: 4vw;
+            text-align: justify;
+        }
+        .main3 a{
+            color: #001957;
+            text-decoration: none;
+        }
+        .main3 .contact, .about{
+            
+            margin-top: 20vh;
+
+        }
+      /* Overley */
+      
+      .overlay {
+            height: 0%;
+            width: 100%;
+            position: fixed;
+            z-index: 99;
+            bottom: 0;
+            left: 0;
+            background-color: rgb(0, 5, 17, .8);
+            overflow-y: hidden;
+            transition: 0.5s;
+
+        }
+
+        .overlay-content {
+            position: relative;
+            top: 15%;
+            width: 100%;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .overlay a {
+            padding: 8px;
+            text-decoration: none;
+            font-size: 3.5vw;
+            color: #06216b;
+            display: block;
+            transition: 0.3s;
+        }
+
+     
+
+        .overlay .closebtn {
+            position: absolute;
+            top: 20px;
+            right: 45px;
+            font-size: 60px;
+        }
+        .overlay form{
+
+            width: 30%;
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%);
+
+        }
+        .overlay h1{
+            color: #6c757d;
+            font-size: 5vw;
+
+        }
+        .overlay input{
+            background: #001959;
+            border: 0px;
+            box-shadow: 0 5px 10px black;
+        }
+        .overlay input:focus{
+            background: #021035;
+        }
+        .overlay input:hover{
+            background: #06216b;
+        }
+        @media screen and (max-height: 450px) {
+        .overlay {overflow-y: auto;}
+        .overlay a {font-size: 20px}
+        .overlay .closebtn {
+            font-size: 40px;
+            top: 15px;
+            right: 35px;
+        }
+        }
+
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        /* Track */
+        ::-webkit-scrollbar-track {
+            background: rgb(0, 5, 17, .8);
+        }
+
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+           background: #021035;
+        }
+
+        /* Handle on hover */
+        ::-webkit-scrollbar-thumb:hover {
+           background: #06216b;
+        }
+
+        @media only screen and (max-width: 720px) {
+            .main{
+                height: 50vh;
+            }
+            .brainimg{
+                height: 50vh;
+                top: 0%;
+                display: none;
+            }
+            .header{
+                top: 50%;
+                transform:  translateY(-50%) ;
+                margin-bottom:60vh;
+            }
+            .header h1{
+                font-size: 20vw;
+            }   
+            .header h5{
+                font-size: 5vw;
+            }
+            .headerbtn{
+                background: transparent;
+                color: #08256d;
+                border: 2px solid #08256d;
+                border-radius: 30px;
+                font-size: 2vw;
+            }
+            .survimg{
+                width: 100%;
+            }
+            .main3{
+                padding-bottom: 20vh;
+            }
+            .main3 img{
+                display: none;
+            } 
+            .main3 h1{
+                font-size: 20vw;
+
+            }  
+            .main3 h5{
+                font-size: 3vh;
+            }
+        }
+    </style>
+  </head>
+  <body>
+
+    <input type="button" class="btn btn-outline-primary login pl-5 pr-5" value="Login" onclick="openNav()">
+    
+    <div id="myNav" class="overlay">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div class="overlay-content">
+        
+           <form action="" class="">
+               <h1 class="mb-5">Login</h1>
+                <div class="form-group">
+                    <input type="text" class="form-control text-center pt-2 pb-2" id="username" aria-describedby="username" placeholder="Enter The Username">
+                </div>
+                <div class="form-group mt-5">
+                    <input type="text" class="form-control text-center pt-2 pb-2" id="password" aria-describedby="username" placeholder="Enter The password">
+                </div>
+                <div class="form-group mt-5">
+                    <input type="button" value="Login" class="btn btn-block text-secondary">
+                </div>
+           </form> 
+        </div>
+    </div>
+
+    
+  <script>
+    function openNav() {
+        document.getElementById("myNav").style.height = "100%";
+    }
+    
+    function closeNav() {
+        document.getElementById("myNav").style.height = "0%";
+    }
+</script>
+
+    <div class="container-fluid">
+        <div class="row main">
+            <div class="col-md-6">
+                <div class="col-md-10 offset-md-1 header">
+                    <h1> DASAP </h1>
+                    <h5>A New Era of Recognition & Surveillance Has Begun, Change is Inevitable. Get in Control With Us. </h5>
+                    <input type="button" value="GET STARTED" class="btn col-md-6 p-3 mt-3 headerbtn">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <img src="brain2.png" class="brainimg" alt="">
+            </div>
+        </div>
+        <div class="row main2">
+            <div class="col-md-5">
+                <img src="surv.png" class="survimg" alt="">
+            </div>
+            <div class="col-md-7">
+                <div class="col-md-10 offset-md-1 header ">
+                    <h1> FREE ACCESS </h1>
+                    <h5>We are Launching <b> Pilot Program </b> i.e. <b> DASAP</b>.
+                        So We are Distributing Free License of Our System, Register and Get the Free Access of 
+                        <b> DASAP </b> <small> BETA </small> & Help Us to Improve Our System.  
+                       <br> <small> [ Note : Only for Limited Users. ]</small>
+                    </h5>
+                    <input type="button" value="GET Free Access" class="btn col-md-6 p-3 mt-3 headerbtn">
+                </div>
+            </div>
+        </div>
+        <div class="row main3 ">
+            <div class="col-md-5 text-center">
+                <div class="contact col-md-12">
+                    <h1 class="col-12">Contact</h1>
+                    <h5 class="mt-5"> Mobile : +91 9561515625  </h5>
+                    <h5 class="mt-4"> LinkedIn : <a href="https://www.linkedin.com/in/saurabh-dhakne-600040181/">Saurah Dhakne</a>  </h5>
+                    <h5 class="mt-4"> Email : sbdhakne309@gmail.com  </h5>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <img src="./braincircuit.png" class="" alt="">
+            </div>
+            <div class="col-md-5 text-center">
+                <div class="about  mr-4">
+                    <h1>About</h1>
+                <h5 class="col-md-9 offset-md-3 "> 
+                    <b> DASAP </b> is The System Which Helps to Authenticate and Manage the User Details. 
+                    DASAP is Faster and Flexible than the Other Old System. 
+                    It has Lot's of New Features like Flexible Models and 3 way Authentications with Mindblowing Admin Panel Facilities.
+                </h5>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>
