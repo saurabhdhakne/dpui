@@ -1,454 +1,160 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Saira+Stencil+One&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Lora:wght@500&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 
-    <title>DASAP</title>
     <style>
         body{
             margin: 0;
             padding: 0;
-            background: #00040E;
-            font-family: 'Saira Stencil One', cursive;
+            height: 100vh;
+            font-family: 'Lora', serif;
+            
 
-        }
-        .login{
-            z-index: 9;
-            position: fixed;
-            left: 50%;
-            bottom: 10px;
-            transform: translate(-50%);
-            background:#3163e0;
-            color:  black;
-            border: 0px;
-            box-shadow: 0 5px 10px black;
         }
         .main{
             min-height: 100vh;
         }
-        .brainimg{
-            height: 90vh;
-            position: absolute;
-            right: 10%;
-            bottom: 0vh;
-            animation: blinker 3s linear infinite;
+        nav{
+            /* box-shadow: 0 1px 5px rgba(15, 15, 15, 0.8); */
         }
-        
+        .navbar-brand span{
+            font-family: 'Montserrat', sans-serif;
+            color: dodgerblue;
+        }
         .header{
-            font-family: 'Saira Stencil One', cursive;
-            position: absolute;
-            top: 45%;
-            transform:  translateY(-50%) ;
-           
+            position:absolute;
+            top: 30%;
+            transform: translateY(-30%);
+            z-index: 99;
         }
         .header h1{
             font-size: 10vw;
-            color: #3163e0;
-            font-family: 'Saira Stencil One', cursive;
-            text-shadow: 0 5px 10px black;
-            z-index: 5;
+            font-family: 'Montserrat', sans-serif;
+            color: dodgerblue;
+            text-shadow: 0 5px 10px rgba(27, 27, 27, 0.8);
+
         }
         .header h5{
-            font-size: 2vw;
-            color: #6c757d;
-            font-family: 'Saira Stencil One', cursive;
-            text-shadow: 0 2px 5px black;
-            text-indent: 4vw;
+            font-size: 1.4vw;
+            text-indent: 2vw;
             text-align: justify;
-            z-index: 5;
+            color: rgb(36, 36, 36);
         }
-        .headerbtn{
-            background: transparent;
-            color: #3163e0;
-            border: 2px solid #3163e0;
-            border-radius: 30px;
-            font-size: 1.8vw;
+        .gfa{
+            font-size: 1.3em;
+            border-radius: 20px;
+            font-family: 'elephant';
+            border: 3px solid dodgerblue;
         }
-        .headerbtn:hover{
-            background: #3163e0;
-            color: snow;
-            transition: .5s ease-in-out;
-        }
-        @keyframes blinker {
-        50% {
-          opacity: .3;
-        }
-        
-      }
-
-    .main2{
-            height: 100vh;
-        }
-    .survimg{
+        .bgs{
             width: 100%;
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            animation: blinker 3s linear infinite;
+            margin-top: 10vh;
         }
-        .main2 h1{
-            font-size: 6vw;
-        }
-
-        .main3{
-            min-height: 100vh;
-        }
-        .main3 img{
-            width: 100%;
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            animation: blinker 4s linear infinite;
-
-
-        }
-        .main3 h1{
-            font-size: 6vw;
-            color: #3163e0;
-            font-family: 'Saira Stencil One', cursive;
-            text-shadow: 0 5px 10px black;
-        }
-        .main3 h5{
-            font-size: 1.5vw;
-            color: #0238BE;
-            font-family: 'Saira Stencil One', cursive;
-            text-shadow: 0 2px 5px black;
-            text-indent: 4vw;
-            text-align: justify;
-        }
-        .main3 a{
-            color: #0238BE;
-            text-decoration: none;
-        }
-        .main3 .contact, .about{
             
+    .login{
+        z-index: 9;
+        position: fixed;
+        left: 50%;
+        bottom: 10px;
+        transform: translate(-50%);
+        background:#7E9DEC;
+        color:  #0A35A2;
+        background: transparent;
+        border: 1px solid #0A35A2;
+        box-shadow: 0 5px 10px rgb(15, 15, 15,.6);
+        border-radius: 20px;
+    }
+    @media only screen and (max-width: 720px) {
+        .header{
+            margin-top: 15vh;
+        }
+        .header h1{
+            font-size: 15vw;
+            text-shadow: 0 2px 5px rgba(27, 27, 27, 0.6);
+        }
+        .header h5{
+            font-size: 2.2vh;
+        }
+        .bgs{
+            width: 100%;
             margin-top: 20vh;
-
         }
-      /* Overley */
-      
-      .overlay {
-            height: 0%;
-            width: 100%;
-            position: fixed;
-            z-index: 99;
-            bottom: 0;
-            left: 0;
-            background-color: rgb(0, 5, 17, .8);
-            overflow-y: hidden;
-            transition: 0.5s;
-
-        }
-
-        .overlay-content {
-            position: relative;
-            top: 15%;
-            width: 100%;
-            text-align: center;
-            margin-top: 30px;
-        }
-
-        .overlay a {
-            padding: 8px;
-            text-decoration: none;
+        .gfa{
             font-size: 3.5vw;
-            color: #06216b;
-            display: block;
-            transition: 0.3s;
+        }
+        nav input{
+            margin-top: 10px;
+            width: 100%;
         }
 
-     
-
-        .overlay .closebtn {
-            position: absolute;
-            top: 20px;
-            right: 45px;
-            font-size: 60px;
-        }
-        .overlay form{
-
-            width: 30%;
-            position: absolute;
-            left: 50%;
-            transform: translate(-50%);
-
-        }
-        .overlay h1{
-            color: #6c757d;
-            font-size: 5vw;
-
-        }
-        .overlay input{
-            background: #001959;
-            border: 0px;
-            box-shadow: 0 5px 10px black;
-        }
-        .overlay input:focus{
-            background: #021035;
-        }
-        .overlay input:hover{
-            background: #06216b;
-        }
-        @media screen and (max-height: 450px) {
-        .overlay {overflow-y: auto;}
-        .overlay a {font-size: 20px}
-        .overlay .closebtn {
-            font-size: 40px;
-            top: 15px;
-            right: 35px;
-        }
-        }
-
-        ::-webkit-scrollbar {
-            width: 10px;
-        }
-
-        /* Track */
-        ::-webkit-scrollbar-track {
-            background: rgb(0, 5, 17, .8);
-        }
-
-        /* Handle */
-        ::-webkit-scrollbar-thumb {
-           background: #021035;
-        }
-
-        /* Handle on hover */
-        ::-webkit-scrollbar-thumb:hover {
-           background: #06216b;
-        }
-
-        @media only screen and (max-width: 720px) {
-            .main{
-                height: 50vh;
-            }
-            .brainimg{
-                height: 50vh;
-                top: 0%;
-                display: none;
-            }
-            .header{
-                top: 50%;
-                transform:  translateY(-50%) ;
-                margin-bottom:60vh;
-            }
-            .header h1{
-                font-size: 20vw;
-            }   
-            .header h5{
-                font-size: 5vw;
-            }
-            .headerbtn{
-                background: transparent;
-                color: #012C96;
-                border: 2px solid #012C96;
-                border-radius: 30px;
-                font-size: 2vw;
-            }
-            .survimg{
-                width: 100%;
-            }
-            .main3{
-                padding-bottom: 20vh;
-            }
-            .main3 img{
-                display: none;
-            } 
-            .main3 h1{
-                font-size: 20vw;
-
-            }  
-            .main3 h5{
-                font-size: 3vh;
-            }
-        }
-
-        /* Animation bg */
-        
-.animation-area {
-	width: 100%;
-	height: 100vh;
-    position: fixed;
-}
-.box-area {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	overflow: hidden;
-}
-.box-area li {
-	position: absolute;
-	display: block;
-	list-style: none;
-	width: 25px;
-	height: 25px;
-	background: #012C96;
-	animation: animate 20s linear infinite;
-	bottom: -150px;
-}
-.box-area li:nth-child(1) {
-	left: 86%;
-	width: 80px;
-	height: 80px;
-	animation-delay: 0s;
-}
-.box-area li:nth-child(2) {
-	left: 12%;
-	width: 30px;
-	height: 30px;
-	animation-delay: 1.5s;
-	animation-duration: 10s;
-}
-.box-area li:nth-child(3) {
-	left: 70%;
-	width: 100px;
-	height: 100px;
-	animation-delay: 5.5s;
-}
-.box-area li:nth-child(4) {
-	left: 42%;
-	width: 150px;
-	height: 150px;
-	animation-delay: 0s;
-	animation-duration: 15s;
-}
-.box-area li:nth-child(5) {
-	left: 65%;
-	width: 40px;
-	height: 40px;
-	animation-delay: 0s;
-}
-.box-area li:nth-child(6) {
-	left: 15%;
-	width: 110px;
-	height: 110px;
-	animation-delay: 3.5s;
-}
-@keyframes animate {
-	0% {
-		transform: translateY(0) rotate(0deg);
-		opacity: 1;
-	}
-	100% {
-		transform: translateY(-800px) rotate(360deg);
-		opacity: 0;
-	}
-}
+    
+    }
 
     </style>
-  </head>
-  <body>
-    <!-- <div class="animation-area">
-		<ul class="box-area">
-			<li></li>
-			<li></li>
-			<li></li>
-			<li></li>
-			<li></li>
-			<li></li>
-		</ul>
-    </div> -->
-    
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <a class="navbar-brand" href="#">
+            <img src="./logo/dasap.svg" width="30" height="30" class="d-inline-block align-top" alt="">
+            <span> DASAP </span>
+          </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#"> </a>
+            </li>
+           
+         
+          </ul>
+            <div class="form-inline my-2 my-lg-0">
+                <ul  class="navbar-nav mr-auto">
+                    <li class="nav-item active mr-4">
+                       <input type="button" value="About" class="btn btn-outline-primary pl-5 pr-5">
+                    </li>
+                    <li class="nav-item active mr-4">
+                        <input type="button" value="Contact" class="btn btn-primary pl-5 pr-5">
+
+                    </li>
+                  
+                </ul>
+            </div>
+        </div>
+      </nav>
     <input type="button" class="btn btn-outline-primary login pl-5 pr-5" value="Login" onclick="openNav()">
-    
-    <div id="myNav" class="overlay">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <div class="overlay-content">
-        
-           <form action="" class="">
-               <h1 class="mb-5">Login</h1>
-                <div class="form-group">
-                    <input type="text" class="form-control text-center pt-2 pb-2" id="username" aria-describedby="username" placeholder="Enter The Username">
-                </div>
-                <div class="form-group mt-5">
-                    <input type="text" class="form-control text-center pt-2 pb-2" id="password" aria-describedby="username" placeholder="Enter The password">
-                </div>
-                <div class="form-group mt-5">
-                    <input type="button" value="Login" class="btn btn-block text-secondary">
-                </div>
-           </form> 
-        </div>
-    </div>
-
-    
-  <script>
-    function openNav() {
-        document.getElementById("myNav").style.height = "100%";
-    }
-    
-    function closeNav() {
-        document.getElementById("myNav").style.height = "0%";
-    }
-</script>
-
-    <div class="container-fluid">
-        <div class="row main">
+    <div class="container">
+        <div class="row main text-center">
             <div class="col-md-6">
-                <div class="col-md-10 offset-md-1 header">
-                    <h1> DASAP </h1>
-                    <h5>A New Era of Recognition & Surveillance Has Begun, Change is Inevitable. Get in Control With Us. </h5>
-                    <input type="button" value="GET STARTED" class="btn col-8 p-2 mt-3 headerbtn">
+                <div class="header">
+                    <h1 class="col-md-12">DASAP</h1>
+                    <h5 class="col-10 offset-1">A New Era of Recognition & Surveillance Has Begun, Change is Inevitable. Get in Control With Us. </h5>
+                    <input type="button" value="GET FREE ACCESS" class="btn btn-outline-primary mt-3 float-left ml-5 pl-5 pr-5  gfa">
                 </div>
             </div>
-            <div class="col-md-6">
-                <img src="brain2.png" class="brainimg" alt="">
-            </div>
-        </div>
-        <div class="row main2">
-            <div class="col-md-5">
-                <img src="surv.png" class="survimg" alt="">
-            </div>
-            <div class="col-md-7">
-                <div class="col-md-10 offset-md-1 header ">
-                    <h1> FREE ACCESS </h1>
-                    <h5>We are Launching <b> Pilot Program </b> i.e. <b> DASAP</b>.
-                        So We are Distributing Free License of Our System, Register and Get the Free Access of 
-                        <b> DASAP </b> <small> BETA </small> & Help Us to Improve Our System.  
-                       <br> <small> [ Note : Only for Limited Users. ]</small>
-                    </h5>
-                    <input type="button" value="GET Free Access" class="btn col-md-8 p-2 mt-3 headerbtn">
-                </div>
-            </div>
-        </div>
-        <div class="row main3 ">
-            <div class="col-md-5 text-center">
-                <div class="contact col-md-12">
-                    <h1 class="col-12">Contact</h1>
-                    <h5 class="mt-5"> Mobile : +91 9561515625  </h5>
-                    <h5 class="mt-4"> LinkedIn : <a href="https://www.linkedin.com/in/saurabh-dhakne-600040181/">Saurah Dhakne</a>  </h5>
-                    <h5 class="mt-4"> Email : sbdhakne309@gmail.com  </h5>
-                </div>
-            </div>
-            <div class="col-md-2">
-                <img src="./braincircuit.png" class="" alt="">
-            </div>
-            <div class="col-md-5 text-center">
-                <div class="about  mr-4">
-                    <h1>About</h1>
-                <h5 class="col-md-9 offset-md-3 "> 
-                    <b> DASAP </b> is The System Which Helps to Authenticate and Manage the User Details. 
-                    DASAP is Faster and Flexible than the Other Old System. 
-                    It has Lot's of New Features like Flexible Models and 3 way Authentications with Mindblowing Admin Panel Facilities.
-                </h5>
-                </div>
+            <div class="col-md-6 text-center">
+                <img src="./bg.gif" class="bgs" alt="">   
             </div>
         </div>
     </div>
 
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-  </body>
+ 
+</body>
 </html>
+
