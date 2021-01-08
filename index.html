@@ -19,43 +19,42 @@
             padding: 0;
             height: 100vh;
             font-family: 'Lora', serif;
-            
-
         }
         .main{
             min-height: 100vh;
         }
-        nav{
-            /* box-shadow: 0 1px 5px rgba(15, 15, 15, 0.8); */
-        }
+        
         .navbar-brand span{
             font-family: 'Montserrat', sans-serif;
             color: dodgerblue;
         }
         .header{
             position:absolute;
-            top: 30%;
-            transform: translateY(-30%);
-            z-index: 99;
+            top: 35%;
+            transform: translateY(-35%);
+            z-index: 8;
         }
         .header h1{
             font-size: 10vw;
             font-family: 'Montserrat', sans-serif;
             color: dodgerblue;
             text-shadow: 0 5px 10px rgba(27, 27, 27, 0.8);
-
+            line-height:9vw ;
         }
         .header h5{
-            font-size: 1.4vw;
+            font-size: 1.15vw;
             text-indent: 2vw;
             text-align: justify;
             color: rgb(36, 36, 36);
         }
         .gfa{
             font-size: 1.3em;
-            border-radius: 20px;
-            font-family: 'elephant';
+            border-radius: 30px;
+            font-family: 'Lora';
             border: 3px solid dodgerblue;
+        }
+        .gfa:hover{
+            box-shadow: 0 5px 10px rgb(15, 15, 15,.6);
         }
         .bgs{
             width: 100%;
@@ -72,9 +71,74 @@
         color:  #0A35A2;
         background: transparent;
         border: 1px solid #0A35A2;
-        box-shadow: 0 5px 10px rgb(15, 15, 15,.6);
+        box-shadow: 0 5px 5px rgb(15, 15, 15,.6);
         border-radius: 20px;
     }
+    .overlay {
+            height: 0%;
+            width: 100%;
+            position: fixed;
+            z-index: 99;
+            bottom: 0;
+            left: 0;
+            background-color: rgb(30, 144, 255, .8);
+            overflow-y: hidden;
+            transition: 0.5s;
+        }
+
+        .overlay-content {
+            position: relative;
+            top: 15%;
+            width: 100%;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .overlay a {
+            padding: 8px;
+            text-decoration: none;
+            font-size: 3.5vw;
+            color:snow;
+            display: block;
+            transition: 0.3s;
+        }
+
+        .overlay .closebtn {
+            position: absolute;
+            top: 20px;
+            right: 45px;
+            font-size: 60px;
+        }
+        .overlay form{
+            width: 30%;
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%);
+        }
+        .overlay h1{
+            color: snow;
+            font-size: 5vw;
+
+        }
+        .overlay input{
+            background: snow;
+            border: 0px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.6);
+        }
+
+        .overlay input:hover{
+            background: rgb(32, 32, 32);
+        }
+        @media screen and (max-height: 450px) {
+        .overlay {overflow-y: auto;}
+        .overlay a {font-size: 20px}
+        .overlay .closebtn {
+            font-size: 40px;
+            top: 15px;
+            right: 35px;
+        }
+        }
+
     @media only screen and (max-width: 720px) {
         .header{
             margin-top: 15vh;
@@ -96,6 +160,12 @@
         nav input{
             margin-top: 10px;
             width: 100%;
+        }
+        .overlay form{
+            width: 80%;
+        }
+        .overlay h1{
+            font-size: 15vw;
         }
 
     
@@ -135,13 +205,33 @@
             </div>
         </div>
       </nav>
+      <div id="myNav" class="overlay">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div class="overlay-content">
+        
+           <form action="login" class="">
+               <h1 class="mb-5">Login</h1>
+                <div class="form-group">
+                    <input type="text" class="form-control text-center pt-2 pb-2" id="username" aria-describedby="username" placeholder="Enter The Username">
+                </div>
+                <div class="form-group mt-5">
+                    <input type="text" class="form-control text-center pt-2 pb-2" id="password" aria-describedby="username" placeholder="Enter The password">
+                </div>
+                <div class="form-group mt-5">
+                    <button type="submit" class="btn btn-block btn-outline-light "> Submit</button>
+                </div>
+           </form> 
+        </div>
+    </div>
     <input type="button" class="btn btn-outline-primary login pl-5 pr-5" value="Login" onclick="openNav()">
     <div class="container">
         <div class="row main text-center">
             <div class="col-md-6">
                 <div class="header">
                     <h1 class="col-md-12">DASAP</h1>
-                    <h5 class="col-10 offset-1">A New Era of Recognition & Surveillance Has Begun, Change is Inevitable. Get in Control With Us. </h5>
+                    <h5 class="col-10 offset-1">
+                        Our vision for AI we are working on the technology where people don't need to do manual effort to recognize the people who are attending their work. Our software recognize the people and make the entry automatically.
+                    </h5>
                     <input type="button" value="GET FREE ACCESS" class="btn btn-outline-primary mt-3 float-left ml-5 pl-5 pr-5  gfa">
                 </div>
             </div>
@@ -150,7 +240,15 @@
             </div>
         </div>
     </div>
-
+    <script>
+        function openNav() {
+            document.getElementById("myNav").style.height = "100%";
+        }
+        
+        function closeNav() {
+            document.getElementById("myNav").style.height = "0%";
+        }
+    </script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
